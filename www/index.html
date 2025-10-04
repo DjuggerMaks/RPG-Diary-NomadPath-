@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NomadPath</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="flex flex-col h-[calc(100vh-120px)]"> <!-- Уменьшаем высоту из-за двух панелей -->
+    <div class="tab-container flex-1 flex flex-col md:flex-row overflow-hidden">
+      <!-- Основные вкладки (нижние 4) -->
+      <div id="profile" class="tab-content flex-1">
+        Профиль
+        <p>Здесь будет аватар, имя и уровень персонажа.</p>
+      </div>
+      <div id="stats" class="tab-content flex-1">
+        Характеристики
+        <p>Таблица 8 характеристик.</p>
+      </div>
+      <div id="skills" class="tab-content flex-1">
+        Навыки
+        <p>Дерево навыков появится здесь.</p>
+      </div>
+      <div id="chronicle" class="tab-content flex-1">
+        Летопись
+      </div>
+      <!-- Дополнительные вкладки (в боковой панели) -->
+      <div id="diary" class="tab-content flex-1">
+        Дневник
+        <button id="analyzeEntry">Анализировать</button>
+        <button id="analyzeAll">Анализировать всё</button>
+      </div>
+      <div id="quests" class="tab-content flex-1">
+        Задания
+        <p>Список активных и выполненных квестов.</p>
+      </div>
+      <div id="habits" class="tab-content flex-1">
+        Привычки
+        <p>Хорошие и вредные привычки, которые можно отмечать.</p>
+      </div>
+      <div id="food" class="tab-content flex-1">
+        Еда
+        <p>Учёт приёмов пищи и пищевых привычек.</p>
+      </div>
+      <div id="fitness" class="tab-content flex-1">
+        Спорт
+        <p>Физическая активность, упражнения, статистика.</p>
+      </div>
+      <div id="money" class="tab-content flex-1">
+        Деньги
+        <p>Доходы, расходы, цели.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Нижняя навигация (4 вкладки) -->
+  <nav class="navbar w-full flex bg-gray-950 border-t border-gray-700 z-10">
+    <div class="nav-button flex-1" data-tab="profile">Профиль</div>
+    <div class="nav-button flex-1" data-tab="stats">Характеристики</div>
+    <div class="nav-button flex-1" data-tab="skills">Навыки</div>
+    <div class="nav-button flex-1" data-tab="chronicle">Летопись</div>
+  </nav>
+
+  <!-- Боковая навигация (остальные вкладки) -->
+  <nav class="sidebar fixed right-0 top-[60px] bottom-0 w-16 bg-gray-950 border-l border-gray-700 z-10">
+    <div class="nav-button flex flex-col items-center py-2" data-tab="diary">Дневник</div>
+    <div class="nav-button flex flex-col items-center py-2" data-tab="quests">Задания</div>
+    <div class="nav-button flex flex-col items-center py-2" data-tab="habits">Привычки</div>
+    <div class="nav-button flex flex-col items-center py-2" data-tab="food">Еда</div>
+    <div class="nav-button flex flex-col items-center py-2" data-tab="fitness">Спорт</div>
+    <div class="nav-button flex flex-col items-center py-2" data-tab="money">Деньги</div>
+  </nav>
+
+  <!-- Кнопка-триггер для разворачивания боковой панели -->
+  <div class="toggle-sidebar">☰</div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
